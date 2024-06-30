@@ -148,7 +148,7 @@ label {
 	line-height: 4.5vw;
 	color: #fff;
     margin: 0;
-    bottom: 30px;
+    bottom: 20px;
 }
 
 .event-banner-wrapper h2 span {
@@ -527,7 +527,7 @@ iframe {
 }
 
 .event-banner-wrapper h2 span {
-    font-size: 16px;
+    font-size: 13px;
 }
 
 .event-ticket-wrapper {
