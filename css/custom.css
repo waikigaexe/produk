@@ -131,13 +131,12 @@ label {
 }
 
 .logo h1 {
-    font-family: 'Nixie One', sans-serif;
+    font-family: 'Courier New', monospace;
     position: absolute;
     color: #ffffff;
-    font-size: 28px;
-    font-weight: 300;
+    font-size: 20px;
     margin: 0;
-    top: 20px;
+    top: 24px;
     left: 20px;
 }
 
@@ -155,7 +154,7 @@ label {
 .event-banner-wrapper h2 span {
     display: block;
     font-size: 1vw;
-    margin: 52px 0 0 4px;
+    margin: 12px 0 0 4px;
     line-height: 2 !important;
 }
 
@@ -511,6 +510,10 @@ iframe {
 
 /* media query for tab */
 @media (max-width: 767px) {
+.logo h1 {
+    font-size: 13px;
+}
+    
 .event-banner-wrapper {
     position: relative;
     width: 100%;
@@ -519,8 +522,8 @@ iframe {
 }
 
 .event-banner-wrapper h2 {
-    font-size: 38px;
-    line-height: 38px;
+    font-size: 24px;
+    line-height: 8px;
 }
 
 .event-banner-wrapper h2 span {
