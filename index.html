@@ -859,29 +859,29 @@ Created by pixpalette.com - online design magazine -->
             let price = document.getElementById("idPrice").textContent;
             let total = document.getElementById("idTotal").textContent;
             let validator = items * price;
-            console.log(product.replace(/  +/g, '%0a'));
+            let casting = product.replace(/\n\s*\n/g, '\n  \n').replace(/  +/g, '%0a').replaceAll('*', '~');
+            console.log(casting);
 
             let name = document.forms["myForm"]["fname"].value;
             let address = document.forms["myForm"]["faddress"].value;
 
-            if (name != "" && address != "" && document.getElementById("tos").checked && validator == total) {
-                let url = "https://wa.me/+6281326771717?text=Product: "
-                    + product.replace(/  +/g, '%0a')
+            if (name != "" && address != "" && document.getElementById("tos").checked /*&& validator == total*/) {
+                let url = "https://wa.me/+6287834944714?text=" + casting
                     + "============================::---%0aJumlah: "
                     + items + " %0aHarga: "
                     + price + " %0aTotal Bayar: "
                     + total + " %0a"
                     + "============================::---%0aNama: "
                     + name + " %0aAlamat: "
-                    + address + " %0a"
-                    + "============================::---%0aTerm of Service: %0aDengan ini saya telah sadar dan menyetujui bahwa harga ongkir ditentukan secara terpisah tergantung pada jasa ekspedisi yang saya pilih"
+                    + address + " %0a";
 
                 window.open(url);
             } else if (!document.getElementById("tos").checked) {
                 alert("Anda belum setuju terkait harga ongkir terpisah!");
-            } else if (validator != total) {
-                alert("Eits!, ada hekel nih, lagi bokek ya :D wkwkwkwk!");
             }
+            // else if (validator != total) {
+            //     alert("Eits!, ada hekel nih, lagi bokek ya :D wkwkwkwk!");
+            // }
             else {
                 alert("Mohon lengkapi NAMA dan ALAMAT LENGKAP PENGIRIMAN!");
             }
