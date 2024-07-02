@@ -16,7 +16,9 @@ $('.btn-number').click(function(e){
 	/* ticket price */
 	var ticketPrice = $(this).parents('.ticketBox').attr('data-ticket-price');
 	/* ticket type */
-	var ticketType = $(this).parents('.ticketBox').find('.ticket-name').html();
+	var ticketTypeDesc = $(this).parents('.ticketBox').find('.ticket-description').html();
+    var ticketType = $(this).parents('.ticketBox').find('.ticket-name').html() + ticketTypeDesc;
+    
 	var total;
 	
     var currentVal = parseInt(input.val());
