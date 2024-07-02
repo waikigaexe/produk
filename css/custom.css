@@ -41,8 +41,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* button style */
 .btn, .btn.disabled {
-    background: #fc921f;;
-    color: #ffffff;
+    background: #ffdf47;;
+    color: #000;
     border: 0;
     border-radius: 20px;
     font-size: 16px;
@@ -52,7 +52,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn:hover {
-    background: #e53935;
+    background: #62502c;
 	color: #ffffff;
     box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.2);
 }
@@ -325,7 +325,7 @@ label {
     padding-right: 12px;
     position: absolute;
     bottom: 0;
-    background: rgb(239 148 26 / 50%);
+    background: rgb(255 235 59 / 60%);
     padding-bottom: 8px;
     padding-top: 8px;
     border-radius: 8px;

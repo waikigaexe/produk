@@ -72,9 +72,13 @@ Created by pixpalette.com - online design magazine -->
 
                                             <div class="row" id="item">
                                                 <div class="col-xs-6">
-                                                    <div class="ticket-name">Extra Hot<span>
-                                                            Berat 100g<br>
-                                                            Kemasan Box</span>
+                                                    <div class="ticket-name">Bronze<span>
+                                                        * 1 wisudawan<br>
+* Durasi 30 menit<br>
+* Jepretan tak terbatas<br>
+* Semua foto ori<br>
+* 5 foto edit<br>
+* Soft file di Google Drive</span>
                                                     </div>
                                                 </div>
 
@@ -103,15 +107,15 @@ Created by pixpalette.com - online design magazine -->
                                                             </div>
 
                                                         </div>
-                                                        <p class="price">Rp 7.000</p>
+                                                        <p class="price">Rp 180.000</p>
                                                     </div>
                                                 </div>
                                             </div>
 
                                             <div class="ticket-description">
-                                                <p><strong>Deskripsi:</strong><br>Makaroni Bantet adalah makaroni yang
-                                                    diolah sedemikian rupa untuk menjaga keseimbangan antara tingkat
-                                                    kematangan dengan tekstur pengembangan yang pass</p>
+                                                <p><strong>Deskripsi:</strong><br>                                          
+                                                    Suka simple dan sendiri<br>
+                                                    * tersedia pilihan extra</p>
                                             </div>
 
                                         </div>
@@ -353,10 +357,12 @@ Created by pixpalette.com - online design magazine -->
                             <hr>
                             <li>Total: <span class="total-amount" id="idTotal"></span></li>
                             <li><br></li>
-                            <li><label style="font-size: 12px;"><input type="checkbox" class="tos" id="tos" name="tos"
-                                        value="Setuju" style="margin-right: 8px;" /> * Saya menyadari harga total belum
-                                    termasuk ongkos kirim</label></li>
+                            <li><label style="font-size: 14px;"><input type="checkbox" class="tos" id="tos" name="tos"
+                                        value="Setuju" style="margin-right: 8px;" /> * TAMBAH WEB</label></li>
                         </ul>
+                        <div class="form-group">
+                            <input id="addweb" type="text" class="form-control" placeholder="Kode Tema" name="fname" style="visibility: hidden;">
+                        </div>
                     </div>
 
                     <div class="contactForm">
@@ -423,6 +429,17 @@ Created by pixpalette.com - online design magazine -->
             }
         }
     </script>
+
+<script>
+    var checkbox = document.querySelector("input[name=tos]");
+    checkbox.addEventListener('change', function () {
+        if (this.checked) {
+            document.getElementById("addweb").style.visibility = "visible";
+        } else {
+            document.getElementById("addweb").style.visibility = "hidden";
+        }
+    });
+</script>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
