@@ -458,6 +458,8 @@ Created by pixpalette.com - online design magazine -->
         function updateResult(query) {
             console.log('src>> ' + query);
             document.getElementById("mycontent").innerHTML = "";
+            myRemove();
+            refreshScript("js/allscript.js");
 
             if (query == null || query == "") {
                 contents.forEach(myProduct);
@@ -466,6 +468,18 @@ Created by pixpalette.com - online design magazine -->
                     || item.sub_title.toLowerCase().includes(query.toLowerCase()));
                 filters.forEach(myProduct);
             }
+        }
+
+        function refreshScript(src) {
+            var scriptElement = document.createElement('script');
+            scriptElement.id = "myjs";
+            scriptElement.src = src;
+            document.getElementsByTagName('body')[0].appendChild(scriptElement);
+        }
+
+        function myRemove() {
+            const element = document.getElementById("myjs");
+            element.remove();
         }
 
         //model
@@ -489,6 +503,7 @@ Created by pixpalette.com - online design magazine -->
                                                             <div class="input-group">
                                                                 <span class="input-group-btn">
                                                                     <button type="button"
+                                                                        id="btn_number"
                                                                         class="btn btn-default btn-number"
                                                                         disabled="disabled" data-type="minus"
                                                                         data-field="quant[6]">
@@ -500,6 +515,7 @@ Created by pixpalette.com - online design magazine -->
                                                                     max="10">
                                                                 <span class="input-group-btn">
                                                                     <button type="button"
+                                                                        id="btn_number"
                                                                         class="btn btn-default btn-number"
                                                                         data-type="plus" data-field="quant[6]">
                                                                         <span class="glyphicon glyphicon-plus"></span>
@@ -609,7 +625,7 @@ Created by pixpalette.com - online design magazine -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/allscript.js"></script>
+    <script id="myjs" src="js/allscript.js"></script>
 </body>
 
 </html>
