@@ -1090,7 +1090,8 @@ Created by pixpalette.com - online design magazine -->
                                     dipotong sesuai dengan keterlambatan klien dari waktu yang sudah disepakati.
                                 </h4>
 
-                                <h4>Soft file asli akan diberikan setelah pelunasan. Proses edit membutuhkan waktu 2-3 hari
+                                <h4>Soft file asli akan diberikan setelah pelunasan. Proses edit membutuhkan waktu 2-3
+                                    hari
                                     tergantung pada jumlah antrian. H-7 harus sudah fix untuk menentukan tempat & waktu.
                                 </h4>
 
@@ -1164,10 +1165,12 @@ Created by pixpalette.com - online design magazine -->
                                         id="tos" name="tos" value="Setuju" style="margin-right: 8px;" /> * TAMBAH WEB
                                     (Rp 50.000)</label></li>
                         </ul>
-                        <div class="form-group">
-                            <input id="addweb" type="text" class="form-control" placeholder="Kode Tema" name="fname"
-                                style="visibility: hidden;">
-                        </div>
+                        <form name="myFormWeb">
+                            <div class="form-group">
+                                <input id="addweb" type="text" class="form-control" placeholder="Kode Tema"
+                                    name="ftheme" style="visibility: hidden;">
+                            </div>
+                        </form>
                     </div>
 
                     <div class="contactForm">
@@ -1178,8 +1181,7 @@ Created by pixpalette.com - online design magazine -->
                             </div>
 
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Alamat Pengiriman" ,
-                                    name="faddress">
+                                <input type="text" class="form-control" placeholder="Lokasi spot foto" , name="faddress">
                             </div>
                         </form>
                         <button type="submit" class="btn" id="check-out" onclick="setUrl()">CHECKOUT</button>
@@ -1191,6 +1193,8 @@ Created by pixpalette.com - online design magazine -->
     </div>
 
     <script>
+        let THEME_BASIC = 50000
+
         let date = new Date();
         let options = {
             weekday: "long", year: "numeric", month: "short",
@@ -1200,55 +1204,74 @@ Created by pixpalette.com - online design magazine -->
         let time = document.getElementById("currentTime");
         time.innerHTML = date.toLocaleTimeString("en-us", options);
 
+        var isWeb = false; //document.getElementById("tos").checked
+
         function setUrl() {
             let product = document.getElementById("idProduct").textContent;
             let items = document.getElementById("idItems").textContent;
             let price = document.getElementById("idPrice").textContent;
             let total = document.getElementById("idTotal").textContent;
-            let validator = items * price;
+            var validator = items * price;
+            if (isWeb) {
+                validator += THEME_BASIC;
+            }
             let casting = product.replace(/\n\s*\n/g, '\n  \n').replace(/  +/g, '%0a').replaceAll('*', '~');
             console.log(casting);
 
+            let theme = document.forms["myFormWeb"]["ftheme"].value;
             let name = document.forms["myForm"]["fname"].value;
             let address = document.forms["myForm"]["faddress"].value;
 
-            if (name != "" && address != "" && document.getElementById("tos").checked /*&& validator == total*/) {
+            if (name != "" && address != "" && validator == total && !isWeb) {
                 let url = "https://wa.me/+6287834944714?text=" + casting
-                    + "============================::---%0aJumlah: "
+                    + "===========::---%0aJumlah: "
                     + items + " %0aHarga: "
                     + price + " %0aTotal Bayar: "
                     + total + " %0a"
-                    + "============================::---%0aNama: "
-                    + name + " %0aAlamat: "
+                    + "===========::---%0aNama: "
+                    + name + " %0aSpot: "
                     + address + " %0a";
 
                 window.open(url);
-            } else if (!document.getElementById("tos").checked) {
-                alert("Anda belum setuju terkait harga ongkir terpisah!");
+            } else if (name != "" && address != "" && validator == total && isWeb && theme.replace(/\s/g, "") != "") {
+                let url = "https://wa.me/+6287834944714?text=" + casting
+                    + "===========::---%0aWeb: " + theme
+                    + "%0a===========::---%0aJumlah: "
+                    + items + " %0aHarga: "
+                    + price + " %0aTotal Bayar: "
+                    + total + " %0a"
+                    + "===========::---%0aNama: "
+                    + name + " %0aSpot: "
+                    + address + " %0a";
+
+                window.open(url);
             }
-            // else if (validator != total) {
-            //     alert("Eits!, ada hekel nih, lagi bokek ya :D wkwkwkwk!");
-            // }
+            else if (isWeb && theme.replace(/\s/g, "") == "") {
+                alert("Inputkan KODE TEMA terlebih dahulu!");
+            }
+            else if (validator != total) {
+                alert("Eits!, ada hekel nih, lagi bokek ya :D wkwkwkwk!");
+            }
             else {
                 alert("Mohon lengkapi NAMA dan ALAMAT LENGKAP PENGIRIMAN!");
             }
         }
-    </script>
 
-    <script>
         var checkbox = document.querySelector("input[name=tos]");
         checkbox.addEventListener('change', function () {
             let total = document.getElementById("idTotal").textContent;
             if (this.checked) {
-                console.log("wtf total" + total);
+                isWeb = true;
                 document.getElementById("addweb").style.visibility = "visible";
-                document.getElementById("idTotal").innerHTML = Number(total) + 50000
+                document.getElementById("idTotal").innerHTML = Number(total) + THEME_BASIC;
             } else {
+                isWeb = false;
                 document.getElementById("addweb").style.visibility = "hidden";
-                document.getElementById("idTotal").innerHTML = Number(total) - 50000
+                document.getElementById("idTotal").innerHTML = Number(total) - THEME_BASIC;
             }
         });
     </script>
+
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
