@@ -269,8 +269,8 @@ ol {
 
 .menu-switch {
 	width: 100%;
-	height: 90px;
-	padding-top: 23px;
+	height: 65px;
+	padding-top: 13px;
 	font-size: 30px;
 	text-align: center;
 	color: #fff;
@@ -351,8 +351,8 @@ ol {
 
 .menu-close {
 	width: 90px;
-	height: 90px;
-	padding-top: 23px;
+	height: 65px;
+	padding-top: 13px;
 	font-size: 30px;
 	text-align: center;
 	color: #fff;
