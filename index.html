@@ -57,9 +57,12 @@ Created by pixpalette.com - online design magazine -->
                         <ul class="nav nav-tabs" role="tablist">
                             <li role="presentation" class="active"><a href="#termCondition"
                                     aria-controls="termCondition" role="tab" data-toggle="tab"
-                                    onclick="setCart('hidden')">Petunjuk</a></li>
+                                    onclick="setCart('hidden')">Home</a></li>
                             <li role="presentation"><a href="#buyTicket" aria-controls="buyTicket" role="tab"
                                     data-toggle="tab" onclick="setCart('visible')">Paket</a></li>
+                            <li role="presentation"><a href="#buyWeb" aria-controls="buyWeb" role="tab"
+                                    data-toggle="tab" onclick="setCart('visible')">Web</a></li>
+
                         </ul>
 
                         <!-- Tab panes -->
@@ -76,8 +79,21 @@ Created by pixpalette.com - online design magazine -->
 
                                 </div>
                             </div>
+                            <div role="tabpanel" class="tab-pane fade" id="buyWeb">
+                                <div class="input-group" style="margin: 24px 0 24px 0;">
+                                    <span style="border-radius: 16px 0 0 16px; border-color: yellow;"
+                                        class="input-group-addon" id="sizing-addon2">🔍</span>
+                                    <input type="search" id="src" name="src" class="form-control"
+                                        placeholder="Search for..."
+                                        style="border-radius: 0 16px 16px 0; background-color: #fff6c9; padding-left: 16px; font-weight: 400; border-color: yellow;">
+                                </div><!-- /input-group -->
+                                <div class="row" id="myweb">
+
+                                </div>
+                            </div>
+
                             <div role="tabpanel" class="tab-pane fade in active" id="termCondition">
-                        
+
                                 <!-- partial:index.partial.html -->
                                 <div class="container" id="slider">
                                     <div>
@@ -118,7 +134,7 @@ Created by pixpalette.com - online design magazine -->
                                     </div>
                                 </div>
                                 <!-- partial -->
-                                 <br><br>
+                                <br><br>
                                 <div class="info">
                                     <h4>DP minimal 50% dari paket yang dipilih. DP akan hangus jika ada pembatalan
                                         sepihak
@@ -501,8 +517,59 @@ Created by pixpalette.com - online design magazine -->
             },
 
         ];
+        let webs = [
+            {
+                img: "images/bronze1.jpg",
+                title: "Bronze 1",
+                sub_title: "Tersedia pilihan web",
+                price_value: 180000,
+                price_display: "180.000",
+                description: `
+                * 1 wisudawan<br>
+                * Durasi 30 menit<br>
+                * Unlimited shoot<br>
+                * Semua foto ori<br>
+                * 5 foto edit<br>
+                * Soft file di G.Drive
+                `
+            },
+            {
+                img: "images/bronze2.jpg",
+                title: "Bronze 2",
+                sub_title: "Tersedia pilihan web",
+                price_value: 200000,
+                price_display: "200.000",
+                description: `
+                * 1 wisudawan<br>
+                * Family n friend<br>
+                * Durasi 30 menit<br>
+                * Unlimited shoot<br>
+                * Semua foto ori<br>
+                * 10 foto edit<br>
+                * Soft file di G.Drive
+                `
+            },
+            {
+                img: "images/silver1.jpg",
+                title: "Silver 1",
+                sub_title: "Tersedia pilihan web",
+                price_value: 250000,
+                price_display: "250.000",
+                description: `
+                * 1 wisudawan<br>
+                * Family n friend<br>
+                * Durasi 1 jam<br>
+                * Unlimited shoot<br>
+                * Semua foto ori<br>
+                * 15 foto edit<br>
+                * Soft file di G.Drive
+                `
+            },
+
+        ];
 
         contents.forEach(myProduct);
+        webs.forEach(myWeb);
 
         function updateResult(query) {
             console.log('src>> ' + query);
@@ -587,6 +654,63 @@ Created by pixpalette.com - online design magazine -->
                                     </div>
             `;
         }
+
+        function myWeb(item, index) {
+            document.getElementById("myweb").innerHTML += `
+                                    <div class="col-md-6">
+                                        <div class="ticketBox" data-ticket-price="${item.price_value}"
+                                            style="background-image: url(${item.img});">
+                                            <div class="inactiveStatus"></div>
+                                            <div class="row" id="item">
+
+                                                <div class="col-xs-6">
+                                                    <div class="ticket-name">${item.title}<span>
+                                                    ${item.sub_title}</span><span><br></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xs-6">
+                                                    <div class="ticket-price-count-box">
+                                                        <div class="ticket-control">
+                                                            <div class="input-group">
+                                                                <span class="input-group-btn">
+                                                                    <button type="button"
+                                                                        id="btn_number"
+                                                                        class="btn btn-default btn-number"
+                                                                        disabled="disabled" data-type="minus"
+                                                                        data-field="quant[6]">
+                                                                        <span class="glyphicon glyphicon-minus"></span>
+                                                                    </button>
+                                                                </span>
+                                                                <input type="text" name="quant[6]"
+                                                                    class="form-control input-number" value="0" min="0"
+                                                                    max="10">
+                                                                <span class="input-group-btn">
+                                                                    <button type="button"
+                                                                        id="btn_number"
+                                                                        class="btn btn-default btn-number"
+                                                                        data-type="plus" data-field="quant[6]">
+                                                                        <span class="glyphicon glyphicon-plus"></span>
+                                                                    </button>
+                                                                </span>
+                                                            </div>
+
+                                                        </div>
+                                                        <p class="price">Rp ${item.price_display}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="ticket-description">
+                                                <span>
+                                                    <p><strong>Deskripsi:</strong><br>
+                                                    ${item.description}</p>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+            `;
+        }
+
     </script>
 
     <script>
