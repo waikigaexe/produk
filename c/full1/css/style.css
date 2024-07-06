@@ -210,12 +210,14 @@ ol {
 		border: 4px solid #f44336;
 		border-left-color: transparent;
 	}
+
 	50% {
 		-webkit-transform: rotate(180deg);
 		transform: rotate(180deg);
 		border: 4px solid #673ab7;
 		border-left-color: transparent;
 	}
+
 	100% {
 		-webkit-transform: rotate(360deg);
 		transform: rotate(360deg);
@@ -230,11 +232,13 @@ ol {
 		border: 4px solid #f44336;
 		border-left-color: transparent;
 	}
+
 	50% {
 		-webkit-transform: rotate(180deg);
 		border: 4px solid #673ab7;
 		border-left-color: transparent;
 	}
+
 	100% {
 		-webkit-transform: rotate(360deg);
 		border: 4px solid #f44336;
@@ -361,7 +365,8 @@ ol {
 }
 
 .site-logo {
-	background: #1d3b49;
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 200% 200%;
 	width: calc(100% - 90px);
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -376,6 +381,19 @@ ol {
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
+	animation: gradient 12s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 .main-menu {
@@ -538,7 +556,7 @@ ol {
 
 .pana-accordion-item .pa-text h2,
 .hero-item .pa-text h2 {
-	font-size: 60px;
+	font-size: 28px;
 	font-weight: 700;
 	color: #fff;
 	margin-bottom: 20px;
@@ -546,23 +564,26 @@ ol {
 
 @media only screen and (min-width: 576px) and (max-width: 767px),
 only screen and (min-width: 768px) and (max-width: 991px) {
+
 	.pana-accordion-item .pa-text h2,
 	.hero-item .pa-text h2 {
-		font-size: 48px;
+		font-size: 28px;
 	}
 }
 
 @media (max-width: 576px) {
+
 	.pana-accordion-item .pa-text h2,
 	.hero-item .pa-text h2 {
-		font-size: 36px;
+		font-size: 16px;
 	}
 }
 
 @media (max-width: 420px) {
+
 	.pana-accordion-item .pa-text h2,
 	.hero-item .pa-text h2 {
-		font-size: 24px;
+		font-size: 14px;
 	}
 }
 
@@ -574,9 +595,10 @@ only screen and (min-width: 768px) and (max-width: 991px) {
 }
 
 @media (max-width: 420px) {
+
 	.pana-accordion-item .pa-text h4,
 	.hero-item .pa-text h4 {
-		font-size: 16px;
+		font-size: 14px;
 	}
 }
 
@@ -649,7 +671,7 @@ only screen and (min-width: 768px) and (max-width: 991px) {
 	display: flex;
 	-webkit-box-align: center;
 	-ms-flex-align: center;
-	align-items: center;
+	/* align-items: center; */
 	-webkit-box-pack: center;
 	-ms-flex-pack: center;
 	justify-content: center;
@@ -659,7 +681,7 @@ only screen and (min-width: 768px) and (max-width: 991px) {
 
 .hero-item .pa-text {
 	padding-left: 0;
-	padding-bottom: 0;
+	padding-bottom: 14px;
 }
 
 .hero-item .pa-text h4 {
@@ -1013,6 +1035,7 @@ only screen and (min-width: 576px) and (max-width: 767px),
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
+
 	.grid-sizer,
 	.gallery-item {
 		width: 25%;
@@ -1021,6 +1044,7 @@ only screen and (min-width: 576px) and (max-width: 767px),
 
 @media only screen and (min-width: 768px) and (max-width: 991px),
 only screen and (min-width: 576px) and (max-width: 767px) {
+
 	.grid-sizer,
 	.gallery-item {
 		width: 50%;
@@ -1028,6 +1052,7 @@ only screen and (min-width: 576px) and (max-width: 767px) {
 }
 
 @media (max-width: 576px) {
+
 	.grid-sizer,
 	.gallery-item {
 		width: 100%;
@@ -1178,6 +1203,7 @@ only screen and (min-width: 576px) and (max-width: 767px) {
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1440px) {
+
 	.blog-grid-sizer,
 	.blog-grid {
 		width: 25%;
@@ -1185,6 +1211,7 @@ only screen and (min-width: 576px) and (max-width: 767px) {
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
+
 	.blog-grid-sizer,
 	.blog-grid {
 		width: 33.333333%;
@@ -1193,6 +1220,7 @@ only screen and (min-width: 576px) and (max-width: 767px) {
 
 @media only screen and (min-width: 768px) and (max-width: 991px),
 only screen and (min-width: 576px) and (max-width: 767px) {
+
 	.blog-grid-sizer,
 	.blog-grid {
 		width: 50%;
@@ -1200,10 +1228,12 @@ only screen and (min-width: 576px) and (max-width: 767px) {
 }
 
 @media (max-width: 576px) {
+
 	.blog-grid-sizer,
 	.blog-grid {
 		width: 100%;
 	}
+
 	.blog-grid-sizer img,
 	.blog-grid img {
 		min-height: 250px;
