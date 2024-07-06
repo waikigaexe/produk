@@ -717,8 +717,8 @@ iframe {
 }
 
 .console-container {
-    font-family: fantasy;
-    font-size: 1em;
+    font-family: 'Nixie One', 'sans-serif';
+    font-size: 0.8em;
     /* height:200px;
   width:600px; */
     display: ruby;
