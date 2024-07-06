@@ -40,7 +40,7 @@ Created by pixpalette.com - online design magazine -->
             <div class="col-sm-5 left-wrapper">
                 <div class="event-banner-wrapper">
                     <div class="logo">
-                        <h1>Kemudahan akses untuk momen spesial Anda!</h1>
+                        <h1>Kemudahan akses<br>ke momen spesial Anda..</h1>
                     </div>
 
                     <h2>Waiki x Gaex'e
@@ -55,16 +55,17 @@ Created by pixpalette.com - online design magazine -->
 
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation" class="active"><a href="#buyTicket" aria-controls="buyTicket"
-                                    role="tab" data-toggle="tab">Paket</a></li>
-                            <li role="presentation"><a href="#termCondition" aria-controls="termCondition" role="tab"
-                                    data-toggle="tab">Petunjuk</a></li>
+                            <li role="presentation" class="active"><a href="#termCondition"
+                                    aria-controls="termCondition" role="tab" data-toggle="tab"
+                                    onclick="setCart('hidden')">Petunjuk</a></li>
+                            <li role="presentation"><a href="#buyTicket" aria-controls="buyTicket" role="tab"
+                                    data-toggle="tab" onclick="setCart('visible')">Paket</a></li>
                         </ul>
 
                         <!-- Tab panes -->
                         <div class="tab-content">
-                            <div role="tabpanel" class="tab-pane fade in active" id="buyTicket">
-                                <div class="input-group" style="margin-bottom: 24px;">
+                            <div role="tabpanel" class="tab-pane fade" id="buyTicket">
+                                <div class="input-group" style="margin: 24px 0 24px 0;">
                                     <span style="border-radius: 16px 0 0 16px; border-color: yellow;"
                                         class="input-group-addon" id="sizing-addon2">🔍</span>
                                     <input type="search" id="src" name="src" class="form-control"
@@ -75,39 +76,87 @@ Created by pixpalette.com - online design magazine -->
 
                                 </div>
                             </div>
-                            <div role="tabpanel" class="tab-pane fade" id="termCondition">
-                                <h4>DP minimal 50% dari paket yang dipilih. DP akan hangus jika ada pembatalan sepihak
-                                    dari klien. Durasi foto dihitung saat sesi foto dimulai, dan durasi foto akan
-                                    dipotong sesuai dengan keterlambatan klien dari waktu yang sudah disepakati.
-                                </h4>
-
-                                <h4>Soft file asli akan diberikan setelah pelunasan. Proses edit membutuhkan waktu 2-3
-                                    hari
-                                    tergantung pada jumlah antrian. H-7 harus sudah fix untuk menentukan tempat & waktu.
-                                </h4>
-
-                                <h4>Terima kasih 😊</h4>
-
-                                <h4><br><br>
-                                    <div class="alert alert-success" role="alert">
-                                        <a href="https://www.tokopedia.com/tokobundet/makaroni-bantet-bundet-extra-hot">
-                                            Tokopedia</a>
+                            <div role="tabpanel" class="tab-pane fade in active" id="termCondition">
+                        
+                                <!-- partial:index.partial.html -->
+                                <div class="container" id="slider">
+                                    <div>
+                                        <div class="content">
+                                            <h2>Jane Doe</h2>
+                                            <span>UI & UX Designer</span>
+                                        </div>
                                     </div>
-                                </h4>
-                                <h4>
-                                    <div class="alert alert-warning" role="alert">
-                                        <a
-                                            href="https://shopee.co.id/Makaroni-Bantet-Bundet-Pedas-Dan-Gurih-Kemasan-Box-i.240125673.18939489697?sp_atk=3bdda9b3-aeed-4559-a8dc-0efe6ca457c8&xptdk=3bdda9b3-aeed-4559-a8dc-0efe6ca457c8t">
-                                            Shopee</a>
+                                    <div>
+                                        <div class="content">
+                                            <h2>Alex Smith</h2>
+                                            <span>CEO Expert</span>
+                                        </div>
                                     </div>
-                                </h4>
+                                    <div>
+                                        <div class="content">
+                                            <h2>Emily New</h2>
+                                            <span>Web Designer</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="content">
+                                            <h2>Lisa Boley</h2>
+                                            <span>Marketing Coordinator</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="content">
+                                            <h2>Jane Doe</h2>
+                                            <span>UI & UX Designer</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="content">
+                                            <h2>Alex Smith</h2>
+                                            <span>CEO Expert</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- partial -->
+                                 <br><br>
+                                <div class="info">
+                                    <h4>DP minimal 50% dari paket yang dipilih. DP akan hangus jika ada pembatalan
+                                        sepihak
+                                        dari klien. Durasi foto dihitung saat sesi foto dimulai, dan durasi foto akan
+                                        dipotong sesuai dengan keterlambatan klien dari waktu yang sudah disepakati.
+                                    </h4>
+
+                                    <h4>Soft file asli akan diberikan setelah pelunasan. Proses edit membutuhkan waktu
+                                        2-3
+                                        hari
+                                        tergantung pada jumlah antrian. H-7 harus sudah fix untuk menentukan tempat &
+                                        waktu.
+                                    </h4>
+
+                                    <h4>Terima kasih 😊</h4>
+
+                                    <h4><br><br>
+                                        <div class="alert alert-success" role="alert">
+                                            <a
+                                                href="https://www.tokopedia.com/tokobundet/makaroni-bantet-bundet-extra-hot">
+                                                Tokopedia</a>
+                                        </div>
+                                    </h4>
+                                    <h4>
+                                        <div class="alert alert-warning" role="alert">
+                                            <a
+                                                href="https://shopee.co.id/Makaroni-Bantet-Bundet-Pedas-Dan-Gurih-Kemasan-Box-i.240125673.18939489697?sp_atk=3bdda9b3-aeed-4559-a8dc-0efe6ca457c8&xptdk=3bdda9b3-aeed-4559-a8dc-0efe6ca457c8t">
+                                                Shopee</a>
+                                        </div>
+                                    </h4>
+                                </div>
                                 <br><br>
                             </div>
                         </div>
 
                     </div>
 
-                    <div class="cart">
+                    <div class="cart" id="cart" style="visibility: hidden;">
                         <div class="row">
                             <div class="col-xs-6">
                                 <p>
@@ -618,6 +667,10 @@ Created by pixpalette.com - online design magazine -->
                 document.getElementById("idTotal").innerHTML = Number(total) - THEME_BASIC;
             }
         });
+
+        function setCart(visibility) {
+            document.getElementById("cart").style.visibility = visibility;
+        }
     </script>
 
 
